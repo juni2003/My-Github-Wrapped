@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"></svg>
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" style="font-family:Arial, sans-serif; background:#0d1117;">
+  <rect width="100%" height="100%" fill="#0d1117"/>
+  <text x="30" y="40" fill="#58a6ff" font-size="26" font-weight="bold">GitHub Wrapped — juni2003</text>
+
+  <text x="30" y="90" fill="#c9d1d9" font-size="16">Total Repos: 24</text>
+  <text x="30" y="120" fill="#c9d1d9" font-size="16">Commits: 0</text>
+  <text x="30" y="150" fill="#c9d1d9" font-size="16">PRs: 2</text>
+  <text x="30" y="180" fill="#c9d1d9" font-size="16">Issues: 0</text>
+  <text x="30" y="210" fill="#c9d1d9" font-size="16">Busiest Day: Saturday</text>
+
+  <text x="30" y="260" fill="#58a6ff" font-size="16" font-weight="bold">Top Repos</text>
+  <text x="30" y="285" fill="#c9d1d9" font-size="14">AI-Meme-Generator, Buildable-ML-DL-Fellowship, Flappy-Bird-2-player-game, Junaid-Portfolio, juni2003</text>
+
+  <text x="30" y="330" fill="#58a6ff" font-size="16" font-weight="bold">Top Languages</text>
+  <text x="30" y="355" fill="#c9d1d9" font-size="14">Python, Jupyter Notebook, Cython, JavaScript, C++</text>
+</svg>
