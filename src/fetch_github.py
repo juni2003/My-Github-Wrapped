@@ -1,7 +1,7 @@
 import os
 import requests
 from collections import Counter
-from datetime import datetime, timedelta
+from datetime import datetime
 
 GITHUB_API = "https://api.github.com"
 USERNAME = os.getenv("GITHUB_USER")
@@ -25,13 +25,23 @@ def get_repos(token):
 
 def get_languages(repos, token):
     lang_counter = Counter()
-    for r in repos[:20]:
+    for r in repos[:30]:
         langs = gh_request(r["languages_url"], token)
         for lang, bytes_ in langs.items():
             lang_counter[lang] += bytes_
     return lang_counter
 
-def get_user_events(token):
+def get_totals_via_search(token):
+    # Total PRs
+    prs = gh_request(f"{GITHUB_API}/search/issues?q=type:pr+author:{USERNAME}", token)["total_count"]
+    # Total issues
+    issues = gh_request(f"{GITHUB_API}/search/issues?q=type:issue+author:{USERNAME}", token)["total_count"]
+    # Total commits (may be approximate, needs token)
+    commits = gh_request(f"{GITHUB_API}/search/commits?q=author:{USERNAME}", token)["total_count"]
+    return commits, prs, issues
+
+def get_busiest_day(token):
+    # still from events (recent activity)
     events = []
     page = 1
     while True:
@@ -40,40 +50,29 @@ def get_user_events(token):
             break
         events.extend(data)
         page += 1
-    return events
+        if page > 3:
+            break
 
-def summarize_events(events):
-    commits = 0
-    prs = 0
-    issues = 0
     days = Counter()
-
     for e in events:
         created = e.get("created_at")
         if created:
             day = datetime.strptime(created, "%Y-%m-%dT%H:%M:%SZ").strftime("%A")
             days[day] += 1
-
-        if e["type"] == "PushEvent":
-            commits += sum(len(c["shas"]) if "shas" in c else 1 for c in e["payload"].get("commits", []))
-        elif e["type"] == "PullRequestEvent":
-            prs += 1
-        elif e["type"] == "IssuesEvent":
-            issues += 1
-
-    busiest_day = days.most_common(1)[0][0] if days else "N/A"
-    return commits, prs, issues, busiest_day
+    return days.most_common(1)[0][0] if days else "N/A"
 
 def fetch_all(token):
     repos = get_repos(token)
     languages = get_languages(repos, token)
-    events = get_user_events(token)
-    commits, prs, issues, busiest_day = summarize_events(events)
+    commits, prs, issues = get_totals_via_search(token)
+    busiest_day = get_busiest_day(token)
 
     top_repos = sorted(repos, key=lambda r: r["stargazers_count"], reverse=True)[:5]
     top_repos = [r["name"] for r in top_repos]
 
     top_langs = [lang for lang, _ in languages.most_common(5)]
+
+    total_stars = sum(r["stargazers_count"] for r in repos)
 
     return {
         "user": USERNAME,
@@ -83,5 +82,6 @@ def fetch_all(token):
         "issues": issues,
         "busiest_day": busiest_day,
         "top_repos": top_repos,
-        "top_langs": top_langs
+        "top_langs": top_langs,
+        "total_stars": total_stars
     }
