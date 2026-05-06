@@ -16,6 +16,7 @@ def build_svg(data):
     svg = svg.replace("{{BUSIEST_DAY}}", data["busiest_day"])
     svg = svg.replace("{{TOP_REPOS}}", ", ".join(data["top_repos"]) or "N/A")
     svg = svg.replace("{{TOP_LANGS}}", ", ".join(data["top_langs"]) or "N/A")
+    svg = svg.replace("{{TOTAL_STARS}}", str(data["total_stars"]))
 
     os.makedirs("output", exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
