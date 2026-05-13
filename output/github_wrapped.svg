@@ -55,7 +55,7 @@
   <!-- Busiest Day -->
   <rect x="40" y="195" width="380" height="70" rx="12" class="card"/>
   <text x="55" y="222" class="label">BUSIEST DAY (RECENT)</text>
-  <text x="55" y="248" class="value">Sunday</text>
+  <text x="55" y="248" class="value">Saturday</text>
 
   <!-- Top Repos -->
   <rect x="40" y="275" width="815" height="60" rx="12" class="card"/>
