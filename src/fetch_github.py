@@ -14,8 +14,10 @@ def gh_request(url, token):
         parts = auth_token.split(None, 1)
         prefix = parts[0].lower()
         if prefix in {"token", "bearer"}:
-            scheme = prefix
-            auth_token = parts[1].strip() if len(parts) == 2 else ""
+            scheme = "Bearer" if prefix == "bearer" else "token"
+            if len(parts) != 2 or not parts[1].strip():
+                raise ValueError("Token prefix provided without a token value.")
+            auth_token = parts[1].strip()
         if auth_token:
             headers = {"Authorization": f"{scheme} {auth_token}"}
     res = requests.get(url, headers=headers)
