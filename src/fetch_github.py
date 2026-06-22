@@ -10,7 +10,8 @@ def gh_request(url, token):
     auth_token = token.strip() if token else ""
     if auth_token.lower().startswith(("token ", "bearer ")):
         auth_token = auth_token.split(None, 1)[1].strip()
-    headers = {"Authorization": "Bearer " + auth_token} if auth_token else {}
+    scheme = "Bearer"
+    headers = {"Authorization": f"{scheme} {auth_token}"} if auth_token else {}
     res = requests.get(url, headers=headers)
     res.raise_for_status()
     return res.json()
