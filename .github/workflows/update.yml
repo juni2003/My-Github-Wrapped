@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate report
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           GITHUB_USER: ${{ github.repository_owner }}
         run: python src/build_report.py
 

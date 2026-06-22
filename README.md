@@ -20,7 +20,6 @@ This project fetches my GitHub stats and generates a custom SVG report that auto
 4. The SVG is pushed to `/output/`.
 
 ## ✅ Setup
-- Add a GitHub token as a secret: `GH_TOKEN`
 - Push code to `main`
 - Action updates every day
 
