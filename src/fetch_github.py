@@ -7,15 +7,17 @@ GITHUB_API = "https://api.github.com"
 USERNAME = os.getenv("GITHUB_USER")
 
 def gh_request(url, token):
+    headers = {}
     auth_token = token.strip() if token else ""
-    scheme = "token"
     if auth_token:
+        scheme = "token"
         parts = auth_token.split(None, 1)
-        prefix = parts[0].lower() if parts else ""
+        prefix = parts[0].lower()
         if prefix in {"token", "bearer"}:
             scheme = prefix
             auth_token = parts[1].strip() if len(parts) == 2 else ""
-    headers = {"Authorization": f"{scheme} {auth_token}"} if auth_token else {}
+        if auth_token:
+            headers = {"Authorization": f"{scheme} {auth_token}"}
     res = requests.get(url, headers=headers)
     res.raise_for_status()
     return res.json()
