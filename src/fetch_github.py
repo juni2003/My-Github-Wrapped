@@ -8,7 +8,7 @@ USERNAME = os.getenv("GITHUB_USER")
 
 def gh_request(url, token):
     headers = {}
-    auth_token = token.strip() if token else ""
+    auth_token = token.strip() if token is not None else ""
     if auth_token:
         scheme = "token"
         parts = auth_token.split(None, 1)
@@ -18,8 +18,7 @@ def gh_request(url, token):
             if len(parts) != 2 or not parts[1].strip():
                 raise ValueError("Token prefix provided without a token value.")
             auth_token = parts[1].strip()
-        if auth_token:
-            headers = {"Authorization": f"{scheme} {auth_token}"}
+        headers = {"Authorization": f"{scheme} {auth_token}"}
     res = requests.get(url, headers=headers)
     res.raise_for_status()
     return res.json()
