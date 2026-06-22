@@ -8,11 +8,12 @@ USERNAME = os.getenv("GITHUB_USER")
 
 def gh_request(url, token):
     auth_token = token.strip() if token else ""
-    scheme = "Bearer"
+    scheme = "token"
     if auth_token:
         parts = auth_token.split(None, 1)
-        if parts and parts[0].lower() in {"token", "bearer"}:
-            scheme = "token" if parts[0].lower() == "token" else "Bearer"
+        prefix = parts[0].lower() if parts else ""
+        if prefix in {"token", "bearer"}:
+            scheme = prefix
             auth_token = parts[1].strip() if len(parts) == 2 else ""
     headers = {"Authorization": f"{scheme} {auth_token}"} if auth_token else {}
     res = requests.get(url, headers=headers)
