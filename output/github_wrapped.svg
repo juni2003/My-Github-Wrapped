@@ -38,7 +38,7 @@
   <!-- Stat Cards -->
   <rect x="40" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="55" y="118" class="label">TOTAL REPOS</text>
-  <text x="55" y="150" class="value">25</text>
+  <text x="55" y="150" class="value">26</text>
 
   <rect x="235" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="250" y="118" class="label">TOTAL COMMITS</text>
@@ -65,5 +65,5 @@
   <!-- Top Languages -->
   <rect x="40" y="345" width="815" height="60" rx="12" class="card"/>
   <text x="55" y="370" class="label">TOP LANGUAGES</text>
-  <text x="55" y="393" class="mini">Python, Jupyter Notebook, Cython, TypeScript, JavaScript</text>
+  <text x="55" y="393" class="mini">Python, TypeScript, Jupyter Notebook, Cython, JavaScript</text>
 </svg>
