@@ -42,7 +42,7 @@
 
   <rect x="235" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="250" y="118" class="label">TOTAL COMMITS</text>
-  <text x="250" y="150" class="value">597</text>
+  <text x="250" y="150" class="value">598</text>
 
   <rect x="430" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="445" y="118" class="label">PULL REQUESTS</text>
@@ -55,7 +55,7 @@
   <!-- Busiest Day -->
   <rect x="40" y="195" width="380" height="70" rx="12" class="card"/>
   <text x="55" y="222" class="label">BUSIEST DAY (RECENT)</text>
-  <text x="55" y="248" class="value">Monday</text>
+  <text x="55" y="248" class="value">Tuesday</text>
 
   <!-- Top Repos -->
   <rect x="40" y="275" width="815" height="60" rx="12" class="card"/>
