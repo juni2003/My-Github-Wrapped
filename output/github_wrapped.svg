@@ -38,7 +38,7 @@
   <!-- Stat Cards -->
   <rect x="40" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="55" y="118" class="label">TOTAL REPOS</text>
-  <text x="55" y="150" class="value">28</text>
+  <text x="55" y="150" class="value">29</text>
 
   <rect x="235" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="250" y="118" class="label">TOTAL COMMITS</text>
