@@ -38,19 +38,19 @@
   <!-- Stat Cards -->
   <rect x="40" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="55" y="118" class="label">TOTAL REPOS</text>
-  <text x="55" y="150" class="value">29</text>
+  <text x="55" y="150" class="value">30</text>
 
   <rect x="235" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="250" y="118" class="label">TOTAL COMMITS</text>
-  <text x="250" y="150" class="value">637</text>
+  <text x="250" y="150" class="value">640</text>
 
   <rect x="430" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="445" y="118" class="label">PULL REQUESTS</text>
-  <text x="445" y="150" class="value">31</text>
+  <text x="445" y="150" class="value">33</text>
 
   <rect x="625" y="90" width="230" height="90" rx="12" class="card"/>
   <text x="640" y="118" class="label">ISSUES + STARS</text>
-  <text x="640" y="150" class="value">2 issues • ★ 40</text>
+  <text x="640" y="150" class="value">3 issues • ★ 40</text>
 
   <!-- Busiest Day -->
   <rect x="40" y="195" width="380" height="70" rx="12" class="card"/>
@@ -65,5 +65,5 @@
   <!-- Top Languages -->
   <rect x="40" y="345" width="815" height="60" rx="12" class="card"/>
   <text x="55" y="370" class="label">TOP LANGUAGES</text>
-  <text x="55" y="393" class="mini">Python, TypeScript, Jupyter Notebook, Cython, JavaScript</text>
+  <text x="55" y="393" class="mini">Python, TypeScript, Jupyter Notebook, JavaScript, Cython</text>
 </svg>
