@@ -42,15 +42,15 @@
 
   <rect x="235" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="250" y="118" class="label">TOTAL COMMITS</text>
-  <text x="250" y="150" class="value">662</text>
+  <text x="250" y="150" class="value">664</text>
 
   <rect x="430" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="445" y="118" class="label">PULL REQUESTS</text>
-  <text x="445" y="150" class="value">34</text>
+  <text x="445" y="150" class="value">33</text>
 
   <rect x="625" y="90" width="230" height="90" rx="12" class="card"/>
   <text x="640" y="118" class="label">ISSUES + STARS</text>
-  <text x="640" y="150" class="value">4 issues • ★ 40</text>
+  <text x="640" y="150" class="value">3 issues • ★ 41</text>
 
   <!-- Busiest Day -->
   <rect x="40" y="195" width="380" height="70" rx="12" class="card"/>
@@ -60,7 +60,7 @@
   <!-- Top Repos -->
   <rect x="40" y="275" width="815" height="60" rx="12" class="card"/>
   <text x="55" y="300" class="label">TOP REPOS</text>
-  <text x="55" y="323" class="mini">AI-Meme-Generator, Buildable-ML-DL-Fellowship, Flappy-Bird-2-player-game, Junaid-Portfolio, juni2003</text>
+  <text x="55" y="323" class="mini">Smart-Farming-Agentic-AI, AI-Meme-Generator, Buildable-ML-DL-Fellowship, Flappy-Bird-2-player-game, Junaid-Portfolio</text>
 
   <!-- Top Languages -->
   <rect x="40" y="345" width="815" height="60" rx="12" class="card"/>
