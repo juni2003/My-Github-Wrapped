@@ -46,11 +46,11 @@
 
   <rect x="430" y="90" width="180" height="90" rx="12" class="card"/>
   <text x="445" y="118" class="label">PULL REQUESTS</text>
-  <text x="445" y="150" class="value">36</text>
+  <text x="445" y="150" class="value">37</text>
 
   <rect x="625" y="90" width="230" height="90" rx="12" class="card"/>
   <text x="640" y="118" class="label">ISSUES + STARS</text>
-  <text x="640" y="150" class="value">3 issues • ★ 41</text>
+  <text x="640" y="150" class="value">4 issues • ★ 41</text>
 
   <!-- Busiest Day -->
   <rect x="40" y="195" width="380" height="70" rx="12" class="card"/>
